@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TrafficIQ – Predictive Traffic & Safety Intelligence</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-left">
+        <div class="logo-icon">🚦</div>
+        <div>
+            <h1>TrafficIQ</h1>
+            <p>Predictive Traffic & Safety Intelligence</p>
+        </div>
+    </div>
+
+    <div class="kpi-container">
+        <div class="kpi-strip">
+            <div>Avg Speed <span id="avgSpeed">--</span></div>
+            <div>Route Complexity <span id="routeComplexity">--</span></div>
+            <div>Fuel Efficiency <span id="fuelEfficiency">--</span></div>
+            <div>Signal Density <span id="signalDensity">--</span></div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <div id="map"></div>
+
+    <div class="dashboard">
+
+        <div class="dashboard-header">
+            Route Intelligence Dashboard
+        </div>
+
+        <div class="mode-toggle">
+            <button id="fasterBtn" class="mode-btn active">⚡ Faster</button>
+            <button id="saferBtn" class="mode-btn">🛡 Safer</button>
+        </div>
+
+        <div class="live-status">
+            <span class="live-dot"></span>
+            Live Traffic • Updated <span id="lastUpdated">--</span>
+            <button id="refreshBtn" class="refresh-btn">Refresh</button>
+        </div>
+
+        <div class="route-comparison" id="routeComparison">
+            Select source and destination in Delhi to begin route analysis.
+        </div>
+
+        <!-- AI INSIGHTS -->
+        <div class="insights">
+            <div class="insight-title">AI Route Insights</div>
+            <ul id="aiInsights">
+                <li>Awaiting route analysis...</li>
+            </ul>
+        </div>
+
+        <!-- CAB BOOKING -->
+        <div class="cab-section">
+            <div class="cab-title">Book a Ride</div>
+            <button class="cab-btn ola-btn" onclick="bookCab('ola')">Book via Ola</button>
+            <button class="cab-btn uber-btn" onclick="bookCab('uber')">Book via Uber</button>
+        </div>
+
+        <button id="resetBtn" class="reset-btn">Reset Route</button>
+
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
