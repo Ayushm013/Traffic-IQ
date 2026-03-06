@@ -1,0 +1,241 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f8fb;
+    color: #2c3e50;
+    overflow: hidden;
+}
+
+/* HEADER */
+
+.main-header {
+    background: linear-gradient(90deg, #1abc9c, #16a085);
+    color: white;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    font-size: 22px;
+    margin-right: 8px;
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.header-left p {
+    margin: 0;
+    font-size: 11px;
+}
+
+/* KPI GLOW CONTAINER */
+
+.kpi-container {
+    background-color: rgba(6, 246, 14, 0.568);
+    padding: 8px 18px;
+    border-radius: 20px;
+    box-shadow: 0 0 18px rgba(0, 255, 47, 0.25);
+}
+
+.kpi-strip {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+}
+
+.kpi-strip span {
+    font-weight: bold;
+}
+
+/* LAYOUT */
+
+.container {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+#map {
+    flex: 7;
+}
+
+.dashboard {
+    flex: 3;
+    background: white;
+    padding: 18px;
+    border-left: 1px solid #e0e6ed;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* DASHBOARD */
+
+.dashboard-header {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.mode-toggle {
+    display: flex;
+    gap: 8px;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #16a085;
+    background: white;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.mode-btn.active {
+    background: #16a085;
+    color: white;
+}
+
+.live-status {
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #2ecc71;
+    border-radius: 50%;
+}
+
+.refresh-btn {
+    margin-left: auto;
+    padding: 4px 8px;
+    font-size: 11px;
+    border: none;
+    background: #16a085;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.route-comparison {
+    background: #eef3f7;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.insights {
+    background: #f8fafc;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    border-left: 4px solid #16a085;
+}
+
+/* CAB SECTION */
+
+.cab-section {
+    background: #f4f9f7;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cab-title {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.cab-btn {
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.ola-btn {
+    background: #27ae60;
+    color: white;
+}
+
+.uber-btn {
+    background: #2c3e50;
+    color: white;
+}
+
+/* RESET BUTTON PROPER RECTANGLE */
+
+.reset-btn {
+    align-self: center;
+    width: 140px;
+    height: 42px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #map {
+        height: 60vh;
+    }
+
+    .dashboard {
+        border-left: none;
+        border-top: 1px solid #e0e6ed;
+    }
+}
+
+@media (max-width: 768px) {
+
+    body { overflow: auto; }
+
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #map {
+        height: 55vh;
+    }
+
+    .mode-toggle {
+        flex-direction: column;
+    }
+
+    .reset-btn {
+        width: 100%;
+    }
+}
